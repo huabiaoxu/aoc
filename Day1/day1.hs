@@ -1,10 +1,11 @@
 import System.Environment
-import Data.List
+
 -- Turns parenthesis to integer values per instructions:
 p2i :: Char -> Int
 p2i '(' = 1
 p2i ')' = -1
 
+-- Find element, assuming it will be found
 findposition number = (\(Just i)->i) . findIndex (==number)
 
 main = do

@@ -20,8 +20,8 @@ computeDistance time deer =
 
 iterateDistance time deer =
     let Deer speed duration rest = deer
-        sprintSteps  = take duration $ cycle [speed]
-        restSteps    = take rest $ cycle [0]
+        sprintSteps  = replicate duration speed
+        restSteps    = replicate rest 0
         iterateSpeed = take time $ cycle (sprintSteps ++ restSteps)
     in scanl1 (+) iterateSpeed
 
